@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
-// import Layout from '@/layout'
+import Layout from '@/layouts/defaultLayout'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -31,21 +31,27 @@ Vue.use(Router)
  * all roles can be accessed
  */
 export const constantRoutes = [
-  // 首页
   {
-    path: '/',
-    // component: Layout,
-    name: '首页',
-    component: () => import('@/views/index')
-  },
-  {
-    path: '/404',
-    component: () => import('@/views/404'),
-    hidden: true
-  },
-
-  // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+    path: '',
+    component: Layout,
+    children: [
+      // 首页
+      {
+        path: '/',
+        // component: Layout,
+        name: '首页',
+        component: () => import('@/views/index')
+      },
+      {
+        path: '/404',
+        component: () => import('@/views/404'),
+        hidden: true
+      },
+    
+      // 404 page must be placed at the end !!!
+      { path: '*', redirect: '/404', hidden: true }
+    ]
+  }
 ]
 
 const createRouter = () => new Router({
