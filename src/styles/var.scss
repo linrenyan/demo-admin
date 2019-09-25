@@ -1,1 +1,23 @@
-$default-color:red;
+// 多行文本溢出省略
+@mixin text-hidden($line:1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+// 过渡效果兼容
+@mixin transition($property:all,$duration:0.5s,$timing-function:ease,$delay:0s){
+    transition: $property $duration $timing-function $delay;
+    -moz-transition: $property $duration $timing-function $delay; /* Firefox 4 */
+    -webkit-transition: $property $duration $timing-function $delay; /* Safari 和 Chrome */
+    -o-transition: $property $duration $timing-function $delay; /* Opera */
+}
+// 双击不选中文本兼容
+@mixin unselect(){
+-moz-user-select:none;/*火狐*/
+-webkit-user-select:none;/*webkit浏览器*/
+-ms-user-select:none;/*IE10*/
+-khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
+}

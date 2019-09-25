@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <svg-icon icon-class="alipay" />
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -43,7 +44,6 @@ export default {
 <style lang="scss" scoped>
 h3 {
   margin: 40px 0 0;
-  color:$default-color;
 }
 ul {
   list-style-type: none;
@@ -55,5 +55,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.svg-icon{
+  font-size: 62px;
 }
 </style>
