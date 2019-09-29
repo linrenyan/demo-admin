@@ -16,4 +16,12 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.main{
+  position: relative;
+  width:1200px;
+  height: 100%;
+  margin:0 auto;
+  overflow: hidden;
+}
+</style>
